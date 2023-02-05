@@ -1,0 +1,38 @@
+#!/bin/bash
+
+while getopts ":gs:l:m:n:" option;
+do 
+  case $option in
+    l)
+      l=$OPTARG
+     ;;
+    m)
+      m=$OPTARG
+     ;;
+    n)
+      n=$OPTARG
+     ;;
+    g)
+	if [ $l -gt $m ] && [ $l -gt $n ]
+	then
+   	 echo $l
+	elif [ $m -gt $l ] && [ $m -gt $n ]
+	then
+   	 echo $m
+	else
+   	 echo largest number is $n
+	fi
+     ;;
+     s)
+	if [ $l -lt $m ] && [ $l -lt $n ]
+        then
+         echo smallest number $l
+        elif [ $m -lt $l ] && [ $m -lt $n ]
+        then
+         echo smallest number $m
+        else
+         echo smallest number is $n
+        fi
+     ;;
+ esac
+done

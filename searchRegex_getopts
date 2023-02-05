@@ -1,0 +1,17 @@
+#!/bin/bash
+
+while getopts ":r:s:p:" option;
+do
+  case $option in
+    r)
+      r=$OPTARG  
+     ;;
+    s)
+      s=$OPTARG
+     ;;
+    p)
+      p=$OPTARG
+     ;;
+   esac
+done
+   grep -$r -$r "$s" $p

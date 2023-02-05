@@ -1,0 +1,20 @@
+#!/bin/bash
+
+i=1
+
+while getopts ":n:m:" option;
+do
+  case $option in
+    n)
+      n=$OPTARG
+      ;;
+    m)
+      m=$OPTARG
+      ;;
+   esac
+done
+     while [ $i -le $m ]
+      do
+	echo " $n x $i = $(( n * i ))"
+        i=$(( i + 1 ))
+      done

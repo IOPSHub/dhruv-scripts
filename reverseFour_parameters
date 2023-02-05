@@ -1,0 +1,20 @@
+#!/bin/bash
+
+while getopts ":l:m:n:o:" option;
+do
+  case $option in
+    o)
+      o=$OPTARG
+     ;;
+    n)
+      n=$OPTARG
+     ;;
+    m)
+      m=$OPTARG
+     ;;
+    l)
+      l=$OPTARG
+     ;;
+   esac
+done
+echo -e "$o \n $n \n $m \n $l "
