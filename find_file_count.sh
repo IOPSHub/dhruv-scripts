@@ -1,5 +1,5 @@
 #!/bin/bash
-
+LOCATION=$p
 FILECOUNT=$num_files
 DIRCOUNT=$num_directories
 SYMBOLIC=$num_symlinks
@@ -7,14 +7,13 @@ while getopts ":p:" option;
 do
 case $option in
 p)
-echo received -p
-LOCATION=$p
+echo received -p $LOCATION
+num_files=$(find $OPTARG -type f | wc -l)
+num_directories=$(find $OPTARG -type d | wc -l)
+num_symlinks=$(find $OPTARG -type l | wc -l)
 ;;
 esac
 done
-num_files=$(find $LOCATION -type f | wc -l)
-num_directories=$(find $LOCATION -type d | wc -l)
-num_symlinks=$(find $LOCATION -type l | wc -l)
 
 echo "File count: " $num_files
 echo "Directory count: " $num_directories
