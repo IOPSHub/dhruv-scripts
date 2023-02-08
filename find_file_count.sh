@@ -1,8 +1,4 @@
 #!/bin/bash
-LOCATION=$p
-FILECOUNT=$num_files
-DIRCOUNT=$num_directories
-SYMBOLIC=$num_symlinks
 while getopts ":p:" option;
 do
 case $option in
